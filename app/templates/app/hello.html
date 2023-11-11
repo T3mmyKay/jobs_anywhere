@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello World</title>
+
+    <style>
+        h1 {
+            color: #1b1e21;
+            font-size: 12rem;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            flex-basis: auto;
+            flex-wrap: nowrap;
+            flex-grow: 0;
+            flex-shrink: 1;
+            background: #e9ecef;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1> Hello World </h1>
+    {% if is_authenticated %}
+        <h3>My name is {{ name }}, I am {{ age }} years old</h3>
+    {% else %}
+        <h3>Hello unknown user</h3>
+    {% endif %}
+    {% for x in list %}
+        <p>{{ x }}</p>
+    {% endfor %}
+
+    <h1>Filters</h1>
+    {{ list | length }}
+    {{ list | length_is:2 }}
+
+{% comment "This is the first comment" %}
+	This is a learning material
+{% endcomment %}
+
+</div>
+</body>
+</html>
